@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/signupbg.png');
+  background-position: center;
+  background-size: cover; /* Cover the entire area */
+  background-repeat: repeat-y; /* Adjust as needed */
+}
+
+
+
+.event-page {
+  font-family: system-ui;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  h1 {
+    color: #488091;
+    text-align: center;
+  }
+
+  h2 {
+    color: #488091;
+    margin-top: 40px;
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+    border-radius: 10px;
+  }
+
+  form {
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    div {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type='text'] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 30px;
+        border: none;
+        background-image: linear-gradient(to right, #a8dbd5, #d9f1fa);
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    button[type='submit'] {
+      background-image: linear-gradient(to right, #488091, #bfd8ff);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      min-height: 30px;
+      transform: scale(1);
+      transition: 0.4s;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.4s;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      background-color: rgba($color: #ffffff, $alpha: 0.4);
+    }
+
+    th {
+      background-color: #488091;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  }
+}

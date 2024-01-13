@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.createEvent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/createEventbg.png');
+  //width: 100vw;
+  // width: 100%;
+  height: 100vh;
+  // height: 100%;
+  background-size: cover;
+  background-position: center;
+  font-family: system-ui;
+
+  .createEventForm {
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    //text-align: center;
+
+    input {
+      border-radius: 30px;
+      border: none;
+      background-image: linear-gradient(to right, #a8dbd5, #d9f1fa);
+      padding: 10px;
+    }
+
+    .linkMessage {
+      font-size: 1rem; /* Default font size */
+      margin-top: 1rem; /* Add some space above the message */
+      word-break: break-word; /* Prevents overflow by breaking long words */
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) { /* Adjust this breakpoint as needed */
+        font-size: 0.8rem; /* Smaller font size for smaller screens */
+      }
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    button {
+      border-radius: 5px;
+      transform: scale(1);
+      transition: 0.4s;
+      border: none;
+      background-image: linear-gradient(to right, #488091, #bfd8ff);
+      min-height: 30px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.4s;
+      }
+    }
+
+    h1 {
+      margin: 0;
+    }
+  }
+}

@@ -50,11 +50,11 @@ const EventPage = () => {
     e.preventDefault();
     setLoading(true)
 
-    const responseName = responses['name']
+    const responseName = responses['Name']
     let responseToUpdate = null
 
     eventResponses.forEach((existingResponses, index) => {
-      if (existingResponses.name === responseName) {
+      if (existingResponses.Name === responseName) {
         responseToUpdate = index
       }
     })
@@ -118,6 +118,17 @@ const EventPage = () => {
 export default EventPage;
 
 const ResponsesTable = ({ responses, showAdminFields, fields, adminFields }) => {
+
+  const calculateTotalPeople = () => {
+    return responses.reduce((total, response) => {
+      const peopleCount = parseInt(response['Total # of people(including you)'], 10) || 0;
+      return total + peopleCount;
+    }, 0);
+  };
+
+
+  const totalPeople = calculateTotalPeople()
+  
   return (
     <table>
       <thead>
@@ -140,6 +151,10 @@ const ResponsesTable = ({ responses, showAdminFields, fields, adminFields }) => 
             })}
           </tr>
         ))}
+        <tr>
+          <td>Total # of people coming</td>
+          <td>{totalPeople}</td>
+        </tr>
       </tbody>
     </table>
   )

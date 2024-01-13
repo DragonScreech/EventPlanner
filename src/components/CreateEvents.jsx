@@ -40,7 +40,7 @@ const MyEvents = () => {
     if (qShot.empty) {
       await setDoc(doc(db, currentUser.uid, eventName), {
         name: eventName,
-        fields: ["Name", ...newFields], // Use the new values directly
+        fields: ["Name", 'Total # of people(including you)', ...newFields], // Use the new values directly
         adminFields: newConFields,
       });
       setEventCreated(true);

@@ -92,7 +92,7 @@ const MyEvents = () => {
         {eventCreated && (
           <div className="linkMessage">
             Make sure to save this link:
-            reacteventplanner.oishanipotter.repl.co/event?adminId=
+            event-planner.vercel.app/event?adminId=
             {currentUser.uid}&eventName={createdEventName}
           </div>
         )}

@@ -91,9 +91,8 @@ const MyEvents = () => {
         <Link to={"/signin"}>Want to switch accounts?</Link>
         {eventCreated && (
           <div className="linkMessage">
-            Make sure to save this link:
-            event-planner-lilac.vercel.app/event?adminId=
-            {currentUser.uid}&eventName={createdEventName}
+            Make sure to save this link:<br></br>
+            <a href={`/event?adminId=${currentUser.uid}&eventName=${createdEventName}`}>{`/event?adminId=${currentUser.uid}&eventName=${createdEventName}`}</a>
           </div>
         )}
         {nameDup ? "You cannot create an event with a duplicate name" : ""}

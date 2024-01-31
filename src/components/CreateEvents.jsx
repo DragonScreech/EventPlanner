@@ -72,7 +72,7 @@ const MyEvents = () => {
         ></input>
         <label>
           Fields(Seperate with commas(Note: Do not add a name field because it
-          will be added automatically to the event))
+          will be added automatically to the event. The same apllies for the total people field))
         </label>
         <input
           type="text"

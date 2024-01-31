@@ -8,10 +8,12 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [err, setErr] = useState(false);
   const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+    setErr(false)
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       console.log('Account created for', name, userCredential.user);
@@ -19,6 +21,7 @@ const SignUp = () => {
       // Additional user profile setup can go here
     } catch (error) {
       console.error('Error signing up:', error.message);
+      setErr(true)
     }
   };
 
@@ -30,6 +33,7 @@ const SignUp = () => {
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
         <button type="submit">Sign Up</button>
+        <p>{err ? 'There was issue signing in. Please check if your password is more than six characters.' : ''}</p>
         <Link to={'/signin'}>Have an account? Sign In</Link>
       </form>
     </div>
